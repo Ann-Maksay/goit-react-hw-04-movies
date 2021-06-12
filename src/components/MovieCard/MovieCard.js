@@ -1,6 +1,6 @@
 import React from "react";
 
-const DEFAULT_IMG = "https://i.ibb.co/jRvB64r/404-2.jpgm";
+import { DEFAULT_IMG } from "../../data/img";
 
 const MovieCard = ({
   poster_path,

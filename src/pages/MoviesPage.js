@@ -33,7 +33,6 @@ class MoviesPage extends Component {
 
     return (
       <>
-        <h1>This is Moviespage</h1>
         <Searchbar onSearch={this.onSearch} />
         {movies.length > 0 && <MoviesList movies={movies} />}
       </>

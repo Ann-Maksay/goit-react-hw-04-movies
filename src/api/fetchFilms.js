@@ -24,3 +24,8 @@ export const fetchCast = async (id) => {
   const { data } = await axios.get(`/movie/${id}/credits?language=en-US`);
   return data;
 };
+
+export const fetchReviews = async (id) => {
+  const { data } = await axios.get(`/movie/${id}/reviews?page=1`);
+  return data.results;
+};

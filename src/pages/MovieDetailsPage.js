@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Route } from "react-router";
 
 import { fetchMoviesDetails } from "../api/fetchFilms";
+import routes from "../routes";
 
 import MovieCard from "../components/MovieCard/MovieCard";
 import MovieNavigation from "../components/MovieNavigation/MovieNavigation";
@@ -24,9 +25,11 @@ class MovieDetailsPage extends Component {
   goBack = () => {
     const { history } = this.props;
     const { prevLocationState } = this.state;
-    if (prevLocationState) {
+    if (prevLocationState?.from) {
       history.push(prevLocationState.from);
+      return;
     }
+    history.push(routes.movies);
   };
 
   render() {

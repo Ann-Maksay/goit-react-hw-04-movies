@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import queryString from "query-string";
 
 import { searchMovies } from "../api/fetchFilms";
 
@@ -11,9 +12,22 @@ class MoviesPage extends Component {
     movies: [],
   };
 
+  componentDidMount() {
+    const { location } = this.props;
+    if (location.search) {
+      const queryParams = queryString.parse(location.search);
+      this.setState({ query: queryParams.query });
+    }
+  }
+
   async componentDidUpdate(prevProps, prevState) {
     const { query } = this.state;
     if (prevState.query !== query) {
+      this.props.history.push({
+        pathname: this.props.location.pathname,
+        search: `query=${query}`,
+      });
+
       this.searchFilms();
     }
   }

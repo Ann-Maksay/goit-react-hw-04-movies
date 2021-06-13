@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import { fetchTrendings } from "../api/fetchFilms";
 import MoviesList from "../components/MoviesList/MoviesList";
 

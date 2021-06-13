@@ -12,7 +12,6 @@ class Cast extends Component {
     const id = this.props.match.params.movieId;
     const { cast } = await fetchCast(id);
     this.setState({ cast: cast });
-    console.log(cast);
   }
 
   render() {

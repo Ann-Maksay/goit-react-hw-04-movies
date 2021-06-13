@@ -11,13 +11,23 @@ import Reviews from "../components/Reviews/Reviews";
 class MovieDetailsPage extends Component {
   state = {
     movie: {},
+    prevLocationState: {},
   };
 
   async componentDidMount() {
     const { movieId } = this.props.match.params;
+    const { location } = this.props;
     const movie = await fetchMoviesDetails(movieId);
-    this.setState({ movie: movie });
+    this.setState({ movie: movie, prevLocationState: location.state });
   }
+
+  goBack = () => {
+    const { history } = this.props;
+    const { prevLocationState } = this.state;
+    if (prevLocationState) {
+      history.push(prevLocationState.from);
+    }
+  };
 
   render() {
     const { movie } = this.state;
@@ -27,6 +37,9 @@ class MovieDetailsPage extends Component {
 
     return (
       <>
+        <button type="button" onClick={this.goBack}>
+          Go back
+        </button>
         {Object.keys(movie).length > 0 ? (
           <>
             <MovieCard

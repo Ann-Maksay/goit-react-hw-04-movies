@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { DEFAULT_IMG } from "../../../data/img";
 
 const CastListItem = ({ profile_path, name, character }) => {
@@ -18,6 +20,16 @@ const CastListItem = ({ profile_path, name, character }) => {
       <p>Character: {character}</p>
     </>
   );
+};
+
+CastListItem.defaultProps = {
+  profile_path: false,
+};
+
+CastListItem.propTypes = {
+  profile_path: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  character: PropTypes.string.isRequired,
 };
 
 export default CastListItem;

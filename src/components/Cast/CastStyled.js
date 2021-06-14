@@ -10,6 +10,12 @@ const CastWrapper = styled.div`
   .castImg {
     max-height: 450px;
   }
+
+  .cast-list-item {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: calc(100% / 4 - 40px);
+  }
 `;
 
 export default CastWrapper;

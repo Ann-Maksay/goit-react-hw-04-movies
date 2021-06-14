@@ -1,10 +1,13 @@
 import React from "react";
+import AppBarWrapper from "./AppBarStyled";
 import Navigation from "./Navigation/Navigation";
 
 const AppBar = () => {
   return (
     <header>
-      <Navigation />
+      <AppBarWrapper>
+        <Navigation />
+      </AppBarWrapper>
     </header>
   );
 };

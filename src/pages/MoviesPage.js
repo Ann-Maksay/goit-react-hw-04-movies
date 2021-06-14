@@ -46,10 +46,10 @@ class MoviesPage extends Component {
     const { movies } = this.state;
 
     return (
-      <>
+      <div className="container">
         <Searchbar onSearch={this.onSearch} />
         {movies.length > 0 && <MoviesList movies={movies} />}
-      </>
+      </div>
     );
   }
 }

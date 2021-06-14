@@ -4,14 +4,24 @@ import routes from "../../../routes";
 
 const Navigation = () => {
   return (
-    <ul>
-      <li>
-        <NavLink exact to={routes.home}>
+    <ul className="nav_list--main">
+      <li className="nav_list_item--main">
+        <NavLink
+          exact
+          to={routes.home}
+          className="nav_link"
+          activeClassName="nav_link--active"
+        >
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink exact to={routes.movies}>
+      <li className="nav_list_item--main">
+        <NavLink
+          exact
+          to={routes.movies}
+          className="nav_link"
+          activeClassName="nav_link--active"
+        >
           Movies
         </NavLink>
       </li>

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import SearchbarWrapper from "./SearchbarStyled";
+
 class Searchbar extends Component {
   state = {
     query: "",
@@ -19,15 +21,20 @@ class Searchbar extends Component {
   render() {
     const { query } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter movie name"
-          value={query}
-          onChange={this.handleChange}
-        />
-        <button type="submit">Search</button>
-      </form>
+      <SearchbarWrapper>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Enter movie name"
+            value={query}
+            onChange={this.handleChange}
+          />
+          <button className="submit-btn" type="submit">
+            Search
+          </button>
+        </form>
+      </SearchbarWrapper>
     );
   }
 }

@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 const ReviewsListItem = ({ author, content }) => {
   return (
-    <>
+    <li className="reviews-list-item">
       <h4>Author: {author}</h4>
       <p>{content}</p>
-    </>
+    </li>
   );
 };
 

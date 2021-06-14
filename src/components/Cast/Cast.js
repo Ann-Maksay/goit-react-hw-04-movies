@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { fetchCast } from "../../api/fetchFilms";
 
+import CastWrapper from "./CastStyled";
 import CastListItem from "./CastListItem/CastListItem";
 
 class Cast extends Component {
@@ -17,25 +18,27 @@ class Cast extends Component {
   render() {
     const { cast } = this.state;
     return (
-      <>
+      <CastWrapper>
         {cast.length > 0 ? (
           <>
             <h3>Cast:</h3>
-            {cast.map(({ cast_id, name, character, profile_path }) => {
-              return (
-                <CastListItem
-                  key={cast_id}
-                  name={name}
-                  character={character}
-                  profile_path={profile_path}
-                />
-              );
-            })}
+            <ul className="cast-list">
+              {cast.map(({ cast_id, name, character, profile_path }) => {
+                return (
+                  <CastListItem
+                    key={cast_id}
+                    name={name}
+                    character={character}
+                    profile_path={profile_path}
+                  />
+                );
+              })}
+            </ul>
           </>
         ) : (
           <p>Not found</p>
         )}
-      </>
+      </CastWrapper>
     );
   }
 }

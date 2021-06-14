@@ -39,8 +39,8 @@ class MovieDetailsPage extends Component {
       movie;
 
     return (
-      <>
-        <button type="button" onClick={this.goBack}>
+      <div className="container">
+        <button className="goback-btn" type="button" onClick={this.goBack}>
           Go back
         </button>
         {Object.keys(movie).length > 0 ? (
@@ -61,7 +61,7 @@ class MovieDetailsPage extends Component {
         ) : (
           <p>Not found</p>
         )}
-      </>
+      </div>
     );
   }
 }

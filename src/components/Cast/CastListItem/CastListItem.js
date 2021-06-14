@@ -5,9 +5,10 @@ import { DEFAULT_IMG } from "../../../data/img";
 
 const CastListItem = ({ profile_path, name, character }) => {
   return (
-    <>
+    <li className="cast-list-item">
       <div>
         <img
+          className="castImg"
           src={
             profile_path
               ? `https://image.tmdb.org/t/p/w300${profile_path}`
@@ -18,7 +19,7 @@ const CastListItem = ({ profile_path, name, character }) => {
       </div>
       <p>Name: {name}</p>
       <p>Character: {character}</p>
-    </>
+    </li>
   );
 };
 

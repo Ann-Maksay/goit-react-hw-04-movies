@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import MovieCardWrapper from "./MovieCardStyled";
+
 import { DEFAULT_IMG } from "../../data/img";
 
 const MovieCard = ({
@@ -13,7 +15,7 @@ const MovieCard = ({
 }) => {
   const stats = Math.round((vote_average / 10) * 100);
   return (
-    <>
+    <MovieCardWrapper>
       <div className="imgContainer">
         <img
           className="filmImg"
@@ -30,8 +32,10 @@ const MovieCard = ({
         <h2>{`${title} (${release_date.slice(0, 4)})`}</h2>
         <p>{`User Score: ${stats}%`}</p>
 
-        <h3>Overview</h3>
-        <p>{overview}</p>
+        <div className="overview-container">
+          <h3>Overview</h3>
+          <p>{overview}</p>
+        </div>
 
         <h3>Ganres</h3>
         {genres.length > 0 ? (
@@ -44,7 +48,7 @@ const MovieCard = ({
           <p>None</p>
         )}
       </div>
-    </>
+    </MovieCardWrapper>
   );
 };
 

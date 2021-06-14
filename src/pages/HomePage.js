@@ -17,10 +17,10 @@ class HomePage extends Component {
     const { movies } = this.state;
 
     return (
-      <>
-        <h1>The most popular films today:</h1>
+      <div className="container">
+        <h1>Trending today:</h1>
         {movies.length > 0 && <MoviesList movies={movies} />}
-      </>
+      </div>
     );
   }
 }
